@@ -15,7 +15,7 @@ runs:
 
     - name: Install Pips
       shell: powershell
-      run: pip install chardet
+      run: pip install chardet==5.2.0
 
     - name: Validate AsciiDoc
       shell: powershell
