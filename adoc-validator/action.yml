@@ -1,0 +1,22 @@
+name: 'Validate AsciiDoc'
+
+inputs:
+  input_dir:
+    description: 'input asciidoc directory path'
+    required: true
+
+runs:
+  using: "composit"
+  steps:
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Pips
+      shell: powershell
+      run: pip install chardet
+
+    - name: Validate AsciiDoc
+      shell: powershell
+      run: python ${{ github.action_path }}\adoc_validator.py -i ${{ inputs.input_dir }}
