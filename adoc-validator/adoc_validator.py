@@ -121,7 +121,7 @@ def main():
 
     if errors != []:
         for e in errors:
-            print(f'{e.filename} {e.line} {e.message}', file=sys.stderr)
+            print(f'AsciiDoc Validation Error {e.filename} {e.line} {e.message}', file=sys.stderr)
         sys.exit(1)
     else:
         sys.exit(0)
