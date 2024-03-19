@@ -99,7 +99,7 @@ def validate_adoc_file(filepath: str) -> List[Error]:
     if errors != []:
         return errors
 
-    with open(filepath, newline = '') as f:
+    with open(filepath, encoding = 'utf-8', newline = '') as f:
         lines = f.readlines()
     errors += validate_line_ending(filename, lines)
     errors += validate_char(filename, lines)
